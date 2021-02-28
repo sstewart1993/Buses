@@ -50,4 +50,11 @@ public class Buses {
     public void removePerson(Person person) {
         this.passengers.remove(person);
     }
+
+    public void pickUp(BusStop busStop){
+        if(this.passengerCount() < this.capacity && busStop.queueLength() > 0){
+            Person personRemoved = busStop.removeFromQueue();
+            this.addPerson(personRemoved);
+        }
+    }
 }
