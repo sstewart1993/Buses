@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Buses {
@@ -8,6 +9,7 @@ public class Buses {
     public Buses(String destination, int capacity) {
         this.destination = destination;
         this.capacity = capacity;
+        this.passengers = new ArrayList<Person>();
     }
 
     public String getDestination() {
@@ -34,13 +36,16 @@ public class Buses {
         this.passengers = passengers;
     }
 
+    public int passengerCount(){
+        return this.passengers.size();
+    }
 
 
+    public void addPerson(Person person) {
+        this.passengers.add(person);
+    }
 
-
-
-
-
-
-
+    public void removePerson(Person person) {
+        this.passengers.remove(person);
+    }
 }
