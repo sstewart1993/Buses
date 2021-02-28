@@ -46,4 +46,12 @@ public class BusesTest {
         assertEquals(0, buses.passengerCount());
     }
 
+    @Test
+    public void busIsTooFull(){
+        buses.addPerson(person);
+        buses.addPerson(person1);
+        buses.addPerson(person2);
+        assertEquals(2, buses.passengerCount());
+    }
+
 }

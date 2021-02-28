@@ -42,7 +42,9 @@ public class Buses {
 
 
     public void addPerson(Person person) {
-        this.passengers.add(person);
+        if(this.passengerCount() < this.capacity) {
+            this.passengers.add(person);
+        }
     }
 
     public void removePerson(Person person) {
